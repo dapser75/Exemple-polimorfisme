@@ -24,4 +24,13 @@ public class Volunteer extends AbsStaffMember {
 		return description;
 	}
 	
+	@Override
+	public String getMember() {
+		String datosParticulares="";
+		datosParticulares = "\n.- Nombre: " + name + ". Dirección: " + address + 
+							". Teléfono: " + phone + ". Descripción: " + description + 
+							". Total a pagar: " + totalPaid + ".";
+	
+		return datosParticulares;
+	}
 }

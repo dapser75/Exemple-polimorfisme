@@ -29,6 +29,7 @@ public abstract class AbsStaffMember {
 		return name;
 	}
 
+	
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -56,7 +57,7 @@ public abstract class AbsStaffMember {
 	public void setTotalPaid(double totalPaid) {
 		this.totalPaid = totalPaid;
 	}
-
+//borrar
 	@Override
     public boolean equals(Object members) {
         if(members instanceof Employee)
@@ -64,7 +65,11 @@ public abstract class AbsStaffMember {
         return false;
     }
 	
+//fin borrar	
+	//prueba polimorfismo
 	
-	
+		public abstract String getMember();	
+		
+	//fin prueba
 	public abstract void pay();
 }

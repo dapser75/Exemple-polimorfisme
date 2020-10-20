@@ -27,6 +27,15 @@ public class Employee extends AbsStaffMember {
 		return salaryPerMonth;
 	}
 
+	@Override
+	public String getMember() {
+		String datosParticulares="";
+		datosParticulares = "\n.- Nombre: " + name + ". Dirección: " + address +
+							". Teléfono: " + phone + ". Salario: " + salaryPerMonth + 
+							". Total a pagar: " + totalPaid + ".";
+	
+		return datosParticulares;
+	}
 	
 	
 }

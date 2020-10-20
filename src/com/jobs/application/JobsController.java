@@ -1,6 +1,5 @@
 package com.jobs.application;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.jobs.domain.*;
@@ -55,25 +54,8 @@ public class JobsController {
 	public String getAllEmployees() {
 		List<AbsStaffMember> members = repository.getAllMembers();
 		String totalEmployees="";
-		Employee employee;
-		Volunteer volunteer;
 		for (int i=0; i<members.size();i++) {
-			if (members.get(i) instanceof Employee){ //Añadir datos del tipo empleado. Se compara a que clase pertenece el objeto.
-				employee= (Employee)members.get(i);
-				totalEmployees += "\n Nombre: " + employee.getName() 
-						+ ". Dirección: " + employee.getAddress()  
-						+ ". Telefono: " + employee.getPhone() 
-						+ ". Salario: " + employee.getSalaryPerMonth() 
-						+ ". Total a pagar: " + employee.getTotalPaid() + ".";	
-						
-			}else { //añadir datos del tipo voluntario
-				volunteer= (Volunteer)members.get(i);
-				totalEmployees +="\n Nombre: " + volunteer.getName() 
-				+ ". Dirección: " + volunteer.getAddress()  
-				+ ". Telefono: " + volunteer.getPhone()
-				+ ". Descripción: " + volunteer.getDescription()					
-				+ ". Total a pagar: " + volunteer.getTotalPaid() + ".";	
-			}
+			totalEmployees +=members.get(i).getMember();
 		}//end for
 		return totalEmployees; //Retorno del string.
 	}//fin metodo getAllEmployees
